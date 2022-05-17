@@ -1,0 +1,23 @@
+<title>Add Item</title>
+{% extends 'base.html' %}
+{% block content %}
+<center>
+    <h1>ADD TO INVENTORY</h1>
+    <br/><br/>
+    <div class="form-wrapper">
+        {%if submitted %}
+        Your item has been entered into the database.<br/><br/>
+        <a href="{% url 'home' %}" class="btn btn-primary">Go Back to Home</a>
+
+
+        {% else %}  
+            <form action="" method="POST">
+                {% csrf_token %}
+
+                {{ form.as_p}}
+                <input class="btn btn-success" type="submit" value="Submit">
+            </form>
+        {% endif %}
+    </div>
+</center>
+{% endblock %}

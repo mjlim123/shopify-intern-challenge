@@ -1,0 +1,16 @@
+<title>Edit Item</title>
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+    <h1>UPDATE ITEM</h1><br/><br/>
+    <div class="form-wrapper">
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            {{ form.as_p}}
+            <input class="btn btn-success" type="submit" value="Submit">&nbsp;&nbsp;&nbsp;<a href="{% url 'delete-inventory' item.id %}" class="btn btn-danger">Delete</a>
+        </form>
+    </div>
+</center>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="wrapper">
+    <h1>Inventory</h1>
+    <ul class="list-unstyled unordered-list">
+        {% for item in item_list %}
+            <li>{{item}}&nbsp;&nbsp;<a class="edit-link" href="{% url 'edit-inventory' item.id %}">Edit</a></li>
+        {% endfor %}
+    </ul>
+    <h1>Warehouses</h1>
+        {% for warehouse in warehouse_list %}
+        <ul class="list-unstyled unordered-list">
+            <li class="list-item">{{warehouse}}&nbsp;&nbsp;<a class="edit-link" href="{% url 'delete-warehouse' warehouse.id %}">Delete</a></li>
+            {% for item in warehouse.item_set.all %}
+            <ul>{{item}}</ul>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+</div>
+{% endblock %}

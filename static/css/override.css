@@ -1,0 +1,24 @@
+.wrapper {
+    padding-left: 50px;
+}
+
+
+.form-wrapper {
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.list-item {
+    font-size: 23px;
+    font-weight: bold;
+    
+}
+
+.unordered-list {
+    font-size: 23px;
+}
+
+.edit-link {
+    font-size: 18px;
+
+}
