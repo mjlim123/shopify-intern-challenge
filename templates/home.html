@@ -13,6 +13,7 @@
         {% for warehouse in warehouse_list %}
         <ul class="list-unstyled unordered-list">
             <li class="list-item">{{warehouse}}&nbsp;&nbsp;<a class="edit-link" href="{% url 'delete-warehouse' warehouse.id %}">Delete</a></li>
+            <li class="address">{{warehouse.address}}</li>
             {% for item in warehouse.item_set.all %}
             <ul>{{item}}</ul>
             {% endfor %}
